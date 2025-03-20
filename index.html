@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Calculator Box</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1><i class="fas fa-calculator"></i> Advanced 3D Calculator</h1>
+        <div class="theme-controls">
+            <label for="colorPicker">🎨 Choose Theme:</label>
+            <input type="color" id="colorPicker" onchange="setCustomTheme()" title="Pick a theme color">
+            <button onclick="setDefaultTheme()" class="default-theme-btn">Reset to Default</button>
+        </div>
+    </header>
+
+    <!-- Calculator Box (Closed Initially) -->
+    <div class="calc-wrapper">
+        <div class="calc-box" onclick="openCalculator()">
+            <div class="lid"></div>
+            <div class="body"></div>
+            <p>Click to Open</p>
+        </div>
+    </div>
+
+    <!-- Calculator (Hidden Initially) -->
+    <div class="container hidden">
+        <div class="calculator">
+            <input type="text" id="display" readonly>
+            <div class="buttons">
+                <button onclick="clearDisplay()" class="special">AC</button>
+                <button onclick="appendToDisplay('%')">%</button>
+                <button onclick="squareRoot()">√</button>
+                <button onclick="appendToDisplay('/')">/</button>
+
+                <button onclick="appendToDisplay('7')">7</button>
+                <button onclick="appendToDisplay('8')">8</button>
+                <button onclick="appendToDisplay('9')">9</button>
+                <button onclick="appendToDisplay('*')">×</button>
+
+                <button onclick="appendToDisplay('4')">4</button>
+                <button onclick="appendToDisplay('5')">5</button>
+                <button onclick="appendToDisplay('6')">6</button>
+                <button onclick="appendToDisplay('-')">-</button>
+
+                <button onclick="appendToDisplay('1')">1</button>
+                <button onclick="appendToDisplay('2')">2</button>
+                <button onclick="appendToDisplay('3')">3</button>
+                <button onclick="appendToDisplay('+')">+</button>
+
+                <button onclick="appendToDisplay('0')">0</button>
+                <button onclick="appendToDisplay('.')">.</button>
+                <button onclick="calculateResult()" class="equals">=</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

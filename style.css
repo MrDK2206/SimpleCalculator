@@ -1,0 +1,160 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    margin: 20px;
+    padding: 30px;
+    color: black;
+    transition: background 0.5s, color 0.5s;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+/* Theme Controls */
+.theme-controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#colorPicker {
+    border: none;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    padding: 0;
+}
+
+.default-theme-btn {
+    background: black;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.default-theme-btn:hover {
+    background: gray;
+}
+
+/* 3D Calculator Box */
+.calc-wrapper {
+    perspective: 1000px;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.calc-box {
+    width: 200px;
+    height: 120px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.calc-box:hover {
+    transform: rotateX(10deg) rotateY(10deg);
+}
+
+.lid {
+    width: 100%;
+    height: 50px;
+    background: gray;
+    position: absolute;
+    top: 0;
+    transform-origin: top;
+    transition: 0.5s;
+}
+
+.body {
+    width: 100%;
+    height: 70px;
+    background: darkgray;
+    position: absolute;
+    bottom: 0;
+    border-radius: 10px;
+}
+
+/* Calculator */
+.container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    width: 300px;
+    margin: auto;
+    transition: 0.5s;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Hide Calculator Initially */
+.hidden {
+    display: none;
+}
+
+/* Input Field */
+#display {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.5em;
+    border: none;
+    outline: none;
+    text-align: right;
+    border-radius: 8px;
+    background: white;
+    color: black;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Buttons */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 15px;
+}
+
+button {
+    padding: 15px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    background: #ddd;
+}
+
+button:hover {
+    background: #bbb;
+}
+
+.equals {
+    background: orange;
+    color: white;
+}
+
+.special {
+    background: red;
+    color: white;
+}
+
+/* Dynamic Contrast */
+body.dark-theme {
+    color: white;
+}
+
+body.dark-theme #display {
+    background: black;
+    color: white;
+}
